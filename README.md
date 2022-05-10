@@ -37,12 +37,9 @@ python3 web-brutator.py --target jenkins --url https://mytarget.com -U ./usernam
 ```
 
 # :rocket: Available Modules
-- axis2
-- htaccess
 - jenkins
 - joomla
 - standardform
-- tomcat
 
 
 Example:

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#Danh sách từ điển sử dụng
 import queue
 import threading
 

@@ -22,14 +22,13 @@ class LineWrapRawTextHelpFormatter(argparse.RawDescriptionHelpFormatter):
         """
         For custom max width
         """
-        #text = self._whitespace_matcher.sub(' ', text).strip()
-        #return textwrap.wrap(text, ARGPARSE_MAX_WIDTH)
+
         return text.splitlines()
 
 
     def _format_args(self, action, default_metavar):
         """
-        For multi args (nargs >= 2), do not use default syntax (ARG [ARG ...])
+        Đối với nhiều args (args> = 2), không sử dụng cú pháp mặc định (ARG [ARG ...])
         """
         get_metavar = self._metavar_formatter(action, default_metavar)
         if action.nargs == argparse.ONE_OR_MORE:
@@ -40,7 +39,7 @@ class LineWrapRawTextHelpFormatter(argparse.RawDescriptionHelpFormatter):
 
     def _format_action_invocation(self, action):
         """
-        Custom for concatenation short and long option with only one occurrence of metavar
+        Tùy chỉnh cho tùy chọn nối ngắn và dài với chỉ một lần xuất hiện metavar
         """
         if not action.option_strings:
             default = self._get_default_metavar_for_positional(action)

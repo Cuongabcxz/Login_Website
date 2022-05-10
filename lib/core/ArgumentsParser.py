@@ -63,10 +63,10 @@ class ArgumentsParser:
             r'(?:/?|[/?]\S+)$', re.IGNORECASE)
         if not regex.match(url):
             raise argparse.ArgumentTypeError('Invalid URL submitted')
-        # Add http:// prefix if necessary
+        # Thêm tiền tố http: // nếu cần
         if not url.startswith('http://') and not url.startswith('https://'):
             url = 'http://{0}'.format(url)
-        # Remove potential ending slash at end of URL
+        # Remove dấu gạch chéo kết thúc có thể xảy ra ở cuối URL
         while url.endswith('/'):
             url = url[:-1]
         return url
@@ -90,9 +90,9 @@ class ArgumentsParser:
         try:
             threads = int(threads)
         except:
-            raise argparse.ArgumentTypeError('Number of threads must be an integer')
+            raise argparse.ArgumentTypeError('Số threads phải là một số nguyên')
         if threads < 1 or threads > MAX_THREADS:
-            raise argparse.ArgumentTypeError('Number of threads must be <= {}'.format(
+            raise argparse.ArgumentTypeError('Số lượng threads phải là <= {}'.format(
                 MAX_THREADS))
         return threads
 
